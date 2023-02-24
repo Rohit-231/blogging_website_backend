@@ -1,13 +1,13 @@
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 
-process.on('uncaughtException',err=>{
-  console.log('UNCAUGHT EXCEPTION! SHUTTING DOWN');
-  console.log(err.name, err.message);
-  server.close(()=>{
-    process.exit(1)
-  })
-})
+// process.on('uncaughtException',err=>{
+//   console.log('UNCAUGHT EXCEPTION! SHUTTING DOWN');
+//   console.log(err.name, err.message);
+//   server.close(()=>{
+//     process.exit(1)
+//   })
+// })
 
 dotenv.config({path:'./config.env'})
 const app=require('./app')
@@ -36,13 +36,13 @@ const server=app.listen(port, () =>{
 });
 
 //9.13 Express Unhandled Rejections
-process.on('unhandledRejection',err=>{
-  console.log(err.name, err.message);
-  console.log('UNHANDLED REJECTION! SHUTTING DOWN');
-  server.close(()=>{
-    process.exit(1)
-  })
-})
+// process.on('unhandledRejection',err=>{
+//   console.log(err.name, err.message);
+//   console.log('UNHANDLED REJECTION! SHUTTING DOWN');
+//   server.close(()=>{
+//     process.exit(1)
+//   })
+// })
 
 //not performed 
 // 8.26, 8.27, 8.28
