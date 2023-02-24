@@ -28,23 +28,8 @@ mongoose
 })
 
 
-// const testBlog = new Blog({
-//   title:"How to become full stack in 3 months?.",
-//   author_name:"rohit pal",
-//   body_content:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore dignissimos explicabo unde quidem in tempora ex harum officia, possimus sit debitis, saepe iste impedit. In dolorum quibusdam molestias eos culpa."
-// });
-
-// testBlog
-//   .save()
-//   .then(doc => {
-//     console.log(doc);
-//   })
-//   .catch(err =>{
-//     console.log("error:-",err);
-//   })
-
 // SERVER
-const port= 5000;
+const port=process.env.PORT | 5000;
 const server=app.listen(port, () =>{
   console.log(`App running on port ${port}...`);
 });
