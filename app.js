@@ -6,6 +6,7 @@ const helmet=require('helmet')
 const mongoSanitize = require('express-mongo-sanitize')
 const xss = require('xss-clean')
 const hpp=require('hpp')
+const compression = require('compression')
 
 const blogRouter=require('./routes/blogRoutes')
 const userRouter=require('./routes/userRoutes')
@@ -49,6 +50,8 @@ app.use(
     whitelist:['duration']
   })
 )
+
+app.use(compression())
 
 app.use(cors());
 
