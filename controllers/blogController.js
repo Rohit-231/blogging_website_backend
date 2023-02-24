@@ -95,7 +95,7 @@ exports.getAllBlogs=async(req,res,next)=>{
                                                 .limitFields()
                                                 .paginate()
     const allBlogs=await features.query;
-
+    console.log("allBlogs",allBlogs);
     res.status(200).json({
         status:'success',
         results:allBlogs.length,
